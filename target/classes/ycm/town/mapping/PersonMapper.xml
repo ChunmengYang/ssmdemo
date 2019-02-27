@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ycm.town.dao.PersonMapper"> 
+	<insert id="insert" parameterType="ycm.town.model.Person">
+		 insert into person (id, name, age)
+		 values (#{id}, #{name},#{age})
+	</insert>
+	
+	 <update id="update" parameterType="ycm.town.model.Person">  
+        update person set name = #{name}  where id = #{id}
+    </update>
+    
+    <select id="query" parameterType="int" resultType="Person" >  
+        select * from person  where id = #{id}
+    </select>
+    
+    <select id="queryAll" resultType="Person" >  
+        select * from person  
+    </select>
+</mapper>
