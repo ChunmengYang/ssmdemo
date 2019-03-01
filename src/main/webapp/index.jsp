@@ -20,5 +20,19 @@
     <button type="submit">提交</button>
 </div>
 </form>
+
+<form action="person/add" method="post">
+<div class="row">
+    <span>name：</span>  
+    <input type="text" name="name"> 
+</div>
+<div class="row">
+    <span>age：</span>  
+    <input type="text" name="age"> 
+</div>
+<div class="row">
+    <button type="submit">提交</button>
+</div>
+</form>
 </body>
 </html>

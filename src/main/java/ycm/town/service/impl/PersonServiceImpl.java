@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import ycm.town.dao.PersonMapper;
 import ycm.town.model.Person;
@@ -22,13 +23,15 @@ public class PersonServiceImpl implements IPersonService {
     public void setPersonMapper(PersonMapper personMapper) {
         this.personMapper = personMapper;
     }
-
+    
+    @Transactional
 	@Override
 	public void insertPerson(Person person) {
 		// TODO Auto-generated method stub
 		personMapper.insert(person);
 	}
 	
+	@Transactional
 	@Override
 	public void updatePersonName(int id, String name) {
 		// TODO Auto-generated method stub

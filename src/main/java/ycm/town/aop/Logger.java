@@ -34,7 +34,7 @@ public class Logger {
     	
     	// 当定义一个Around增强处理方法时，该方法的第一个形参必须是ProceedJoinPoint类型（至少含有一个形参），
     	// 在增强处理方法体内，调用ProceedingJoinPoint参数的procedd()方法才会执行目标方法——这就是Around增强处理可以完全控制方法的执行时机、如何执行的关键；
-    	// 如果程序没有调用ProceedingJoinPoint参数的proceed()方法，则目标方法不会被执行。
+    	// 如果程序没有调用ProceedingJoinPoint参数的proceed()方法，则目标方法不会被执行。目标方法有参数和返回值，该方法也必须有。
     	Object rvt = joinPoint.proceed(joinPoint.getArgs());
     	
     	System.out.println("===========AOP Around End Advice...===========");

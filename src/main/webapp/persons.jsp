@@ -10,11 +10,13 @@
 <body>
         <table>
             <tr>
+            	<th>ID</th>
                 <th>姓名</th>
                 <th>年龄</th>
             </tr>
             <c:forEach items="${persons}" var="person">
                 <tr>
+                	<td>${person.id }</td>
                     <td>${person.name }</td>
                     <td>${person.age }</td>
                 </tr>

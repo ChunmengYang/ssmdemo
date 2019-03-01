@@ -46,6 +46,19 @@ public class PersonController {
         return "persons";
     }
     
+    @RequestMapping(path="/add", method=RequestMethod.POST)
+    public String updatePersonName(@RequestParam("name") String name, @RequestParam("age") int age, Model model){
+    	Person person = new Person();
+		person.setAge(age);
+		person.setName(name);
+    	personService.insertPerson(person);
+    	
+        List<Person> persons = personService.loadPersons();
+        model.addAttribute("persons", persons);
+        
+        return "persons";
+    }
+    
     @RequestMapping(path="/{id}", method=RequestMethod.GET)
     @ResponseBody
     public Person getPerson(@PathVariable("id") int id){
