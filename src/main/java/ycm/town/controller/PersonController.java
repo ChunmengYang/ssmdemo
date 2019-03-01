@@ -37,7 +37,7 @@ public class PersonController {
     }
     
     @RequestMapping(path="/update", method=RequestMethod.POST)
-    public String updatePersonName(@RequestParam("id") Integer id, @RequestParam("name") String name, Model model){
+    public String updatePersonName(@RequestParam("id") int id, @RequestParam("name") String name, Model model){
     	personService.updatePersonName(id, name);
     	
         List<Person> persons = personService.loadPersons();
@@ -48,7 +48,7 @@ public class PersonController {
     
     @RequestMapping(path="/{id}", method=RequestMethod.GET)
     @ResponseBody
-    public Person getPerson(@PathVariable("id") Integer id){
+    public Person getPerson(@PathVariable("id") int id){
         Person person = personService.getPerson(id);
         return person;
     }
